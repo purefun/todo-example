@@ -3,12 +3,15 @@ module github.com/purefun/todo-example
 go 1.18
 
 require (
+	github.com/99designs/gqlgen v0.17.5
 	github.com/asynkron/protoactor-go v0.0.0-20220423071151-17c6029fc48e
+	github.com/vektah/gqlparser/v2 v2.4.2
 	google.golang.org/protobuf v1.28.0
 )
 
 require (
 	github.com/Workiva/go-datastructures v1.0.53 // indirect
+	github.com/agnivade/levenshtein v1.1.1 // indirect
 	github.com/asynkron/gofun v0.0.0-20220329210725-34fed760f4c2 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
@@ -18,8 +21,11 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/uuid v1.3.0 // indirect
+	github.com/gorilla/websocket v1.5.0 // indirect
+	github.com/hashicorp/golang-lru v0.5.4 // indirect
 	github.com/lithammer/shortuuid/v4 v4.0.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369 // indirect
+	github.com/mitchellh/mapstructure v1.3.1 // indirect
 	github.com/orcaman/concurrent-map v0.0.0-20190107190726-7ed82d9cb717 // indirect
 	github.com/prometheus/client_golang v1.12.1 // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
