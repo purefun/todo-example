@@ -13,17 +13,11 @@ message UpdateTodoTextCmd {
   string text = 1;
 }
 
-message CompleteTodoCmd {
-  string ID = 1;
-}
+message CompleteTodoCmd {}
 
-message UncompleteTodoCmd {
-  string ID = 1;
-}
+message UncompleteTodoCmd {}
 
-message DeleteTodoCmd {
-  string ID = 1;
-}
+message DeleteTodoCmd {}
 
 service Todo {
   rpc Create (CreateTodoCmd) returns (Empty) {}

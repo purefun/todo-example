@@ -7,6 +7,8 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/purefun/todo-example/server/app/cluster"
+	"github.com/purefun/todo-example/server/app/handlers"
 	"github.com/purefun/todo-example/server/gql"
 	"github.com/purefun/todo-example/server/gql/generated"
 )
@@ -19,7 +21,10 @@ func main() {
 		port = defaultPort
 	}
 
-	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &gql.Resolver{}}))
+	cluster := cluster.NewCluster()
+	handlers := handlers.NewHandlers(cluster)
+
+	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &gql.Resolver{Handlers: handlers}}))
 
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
 	http.Handle("/query", srv)

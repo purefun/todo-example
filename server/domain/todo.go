@@ -31,8 +31,10 @@ func (t *Todo) Apply(event interface{}) {
 		t.deleted = true
 
 	default:
-		fmt.Printf("unhandled event: %s\n", reflect.TypeOf(event).Name())
+		fmt.Printf("unhandled event: %s, %+v\n", reflect.TypeOf(event).Elem().Name(), event)
 	}
+
+	fmt.Printf("%+v\n", t)
 }
 
 func (t *Todo) ID() string {

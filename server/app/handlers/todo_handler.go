@@ -24,10 +24,10 @@ func (t *TodoHandler) Terminate(ctx cluster.GrainContext) {
 
 func (t *TodoHandler) ReceiveDefault(ctx cluster.GrainContext) {
 	switch ev := ctx.Message().(type) {
-	case app.EventEnvelope:
+	case *app.EventEnvelope:
 		t.todo.Apply(ev.Event)
 	default:
-		fmt.Printf("unhandled message: %s\n", reflect.TypeOf(ev).Name())
+		fmt.Printf("unhandled message: %s\n", reflect.TypeOf(ev).Elem().Name())
 	}
 }
 
