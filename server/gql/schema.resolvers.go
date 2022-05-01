@@ -1,4 +1,4 @@
-package graph
+package gql
 
 // This file will be automatically regenerated based on the schema, any resolver implementations
 // will be copied through when generating and any unknown code will be moved to the end.
@@ -7,8 +7,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/purefun/todo-example/graph/generated"
-	"github.com/purefun/todo-example/graph/model"
+	"github.com/purefun/todo-example/server/gql/generated"
+	"github.com/purefun/todo-example/server/gql/model"
 )
 
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
