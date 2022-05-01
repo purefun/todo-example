@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package commands;
+option go_package = "github.com/purefun/todo-example/server/app/commands";
+
+message Empty {}
+
+message CreateTodoCmd {
+  string id = 1;
+  string text = 2;
+}
+
+message UpdateTodoTextCmd {
+  string text = 1;
+}
+
+message CompleteTodoCmd {
+  string id = 1;
+}
+
+message UncompleteTodoCmd {
+  string id = 1;
+}
+
+message DeleteTodoCmd {
+  string id = 1;
+}
+
+service Todo {
+  rpc Create (CreateTodoCmd) returns (Empty) {}
+  rpc UpdateText (UpdateTodoTextCmd) returns(Empty) {}
+  rpc Complete (CompleteTodoCmd) returns (Empty) {}
+  rpc Uncomplete (UncompleteTodoCmd) returns (Empty) {}
+  rpc Delete (DeleteTodoCmd) returns (Empty) {}
+}
