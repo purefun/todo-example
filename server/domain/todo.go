@@ -35,6 +35,18 @@ func (t *Todo) Apply(event interface{}) {
 	}
 }
 
+func (t *Todo) ID() string {
+	return t.id
+}
+
+func (t *Todo) Text() string {
+	return t.text
+}
+
+func (t *Todo) Completed() bool {
+	return t.completed
+}
+
 type TodoCreated struct {
 	ID   string
 	Text string
@@ -49,6 +61,7 @@ type TodoUncompleted struct {
 }
 
 type TodoTextUpdated struct {
+	ID      string
 	NewText string
 }
 

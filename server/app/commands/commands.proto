@@ -6,7 +6,6 @@ option go_package = "github.com/purefun/todo-example/server/app/commands";
 message Empty {}
 
 message CreateTodoCmd {
-  string id = 1;
   string text = 2;
 }
 
@@ -15,15 +14,15 @@ message UpdateTodoTextCmd {
 }
 
 message CompleteTodoCmd {
-  string id = 1;
+  string ID = 1;
 }
 
 message UncompleteTodoCmd {
-  string id = 1;
+  string ID = 1;
 }
 
 message DeleteTodoCmd {
-  string id = 1;
+  string ID = 1;
 }
 
 service Todo {
